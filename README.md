@@ -3,11 +3,7 @@ ROS which extracts value from speed limit sign. Input: image, speed limit boundi
 Keep in mind that this repository is in package format. Ready to pull into a catkin workspace.
 
 # Current State:
-#### Runs: 🏃
-#### Compiles: ✅
-#### Complete: ✔️
-#### Incomplete: ❌
-#### Empty: ❗️
+#### Runs: 🏃 Compiles: ✅ Complete: ✔️ Incomplete: ❌ Empty: ❗️
 ## speed_limit_detection.launch ❗️
 ### TODO
 ## speed_limit_detection_node.cpp ❌
