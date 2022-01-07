@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package format="2">
+  <name>speed_limit_detection</name>
+  <version>0.1.0</version>
+  <description>ROS which extracts value from speed limit sign. Input: image, speed limit bounding box.</description>
+  <maintainer email="pola5392@kettering.edu">Zeus Polanco Salgado</maintainer>
+  <license>TODO</license>
+  <url type="website">https://github.com/surety/speed_limit_detection</url>
+  <author email="pola5392@kettering.edu">Zeus Polanco Salgado</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>bulldog_msgs</build_depend>
+  <build_depend>tesseract</build_depend>
+  <build_depend>leptonica</build_depend>
+  <build_depend>opencv2</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>bulldog_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>tesseract</exec_depend>
+  <exec_depend>leptonica</exec_depend>
+  <exec_depend>opencv2</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+</package>
