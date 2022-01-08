@@ -10,7 +10,7 @@ TODO
 set up date from ROS messages and call detectSpeedLimit
 ## speed_limit_detection.cpp ❌
 update to take in image and array of bounding boxes. output array of values for each bounding box.
-## speed_limit_detection.h ❗️
+## speed_limit_detection.h ✔️
 Write headers file for speed_limit_detection_node
 ## CMakeLists.txt ❗️
 TODO

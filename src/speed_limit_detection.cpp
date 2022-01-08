@@ -6,17 +6,7 @@
 // Compile with C++ 11:
 // g++ speedlimit.cpp --std=c++11 $(pkg-config --libs --cflags opencv4 tesseract)
 
-#include <iostream>
-#include <string>
-using std::cout;
-using std::cin;
-using std::endl;
-
-#include <tesseract/baseapi.h>
-#include <leptonica/allheaders.h>
-
-#include <opencv2/opencv.hpp>
-using namespace cv;
+#include "speed_limit_detection.h"
  // pytesseract.image_to_string(threshold,lang='eng',config='--psm 10 --oem 3 -c tessedit_char_whitelist=0123456789')
 
 // Input: Image and bounding box
