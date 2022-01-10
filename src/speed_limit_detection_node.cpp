@@ -22,19 +22,23 @@ public:
   // Output: No returns. Publishes updated Frame with speed limit sign values
   // Callback function for "frames/". TODO
   void callback(const bulldog_msgs::Frame& msg){
-    ROS_INFO("Working on frame: [%d]", msg->id);
+    ROS_INFO("Working on frame: [%d]", msg.id);
     int numOfObjects = msg.objects.size();
-    bulldog_msgs::Frame updatedFrame;
-    bulldog_msgs::Object objects[numOfObjects];
-    int objectBoundingBoxes[][];
-    int speedLimitValues[numOfObjects];
-    // build Frame with updated speedlimitsigns
+    int boxes[numOfObjects][4];
+    bulldog_msgs::Frame updatedFrame = msg;
     for (int i = 0; i < numOfObjects; i++){
-      // set bounding box values
-      objectBoundingBoxes = [];
+      boxes[i][0] = msg.objects[i].x; boxes[i][1] = msg.objects[i].y;
+      boxes[i][2] = msg.objects[i].h; boxes[i][3] = msg.objects[i].w;
     }
-    speedLimitValues =  detectSpeedLimit(frameImage, objectBoundingBoxes);
-    updatedFrame.objects = objects;
+
+    // convert image to opencv image and send
+    results =  detectSpeedLimit(frameImage, boxes);
+    for (int i = 0; i < numOfObjects; i++){
+      updatedFrame.objects[i].x = results[0];
+      updatedFrame.objects[i].y = results[1];
+      updatedFrame.objects[i].h = results[2];
+      updatedFrame.objects[i].w = results[3];
+    }
     // publish updated sign
     pub.publish(updatedFrame);
   }

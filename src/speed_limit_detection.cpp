@@ -12,11 +12,11 @@
 // Input: Image and bounding box
 // Output: Value of sign/s
 // Set Image -> Set bounding boxes -> get values -> output values
-int * detectSpeedLimit(Mat sign){
-  char * outText;
-  int recognizeSuccess;
-	tesseract::TessBaseAPI api;
+int * detectSpeedLimit(Mat frameImage, int * boxes){
+  int numOfBoxes = sizeof(boxes)/sizeof(boxes[0]);
+  int outValues[numOfBoxes];
 
+	tesseract::TessBaseAPI api;
   // Init(datapath, english language)
 	if (api.Init(NULL, "eng")){
 		cout << "Could not open or find the image" << endl;
@@ -31,14 +31,15 @@ int * detectSpeedLimit(Mat sign){
   api.SetVariable("tessedit_char_whitelist", "0123456789");
   api.SetVariable("oem", "3");
   api.SetImage((uchar*)sign.data, sign.size().width, sign.size().height, sign.channels(), sign.step1());
-  // api.SetRectangle(box->x, box->y, box->w, box->h); // set bounding box values
-  api.Recognize(0);
-
-  outText = api.GetUTF8Text();
-  cout << "OCR output: " << outText << ":end of text" << endl;
-
+  for (int i = 0; i < numOfBoxes; i++){
+    // x , y , w , h
+    api.SetRectangle(boxes[i][0], boxes[i][1],
+                     boxes[i][2], boxes[i][3]); // set bounding box values
+    api.Recognize(0);
+    outValues[i] = api.GetUTF8Text();
+  }
   api.End();
-  return outText;
+  return outValues;
 }
 // End of detectSpeedLimit
 

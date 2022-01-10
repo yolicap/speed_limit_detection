@@ -10,6 +10,7 @@ using std::endl;
 #include <tesseract/baseapi.h>
 #include <leptonica/allheaders.h>
 
+#include <cv_bridge/cv_bridge.h>
 #include <opencv2/opencv.hpp>
 using namespace cv;
 
