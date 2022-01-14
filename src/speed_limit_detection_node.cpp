@@ -25,6 +25,7 @@ public:
     ROS_INFO("Working on frame: [%d]", msg.id);
     int numOfObjects = msg.objects.size();
     int boxes[numOfObjects][4];
+    Mat frameImage;
     bulldog_msgs::Frame updatedFrame = msg;
     for (int i = 0; i < numOfObjects; i++){
       boxes[i][0] = msg.objects[i].x; boxes[i][1] = msg.objects[i].y;
@@ -32,6 +33,7 @@ public:
     }
 
     // convert image to opencv image and send
+    frameImage = ROSToCV(msg->image);
     results =  detectSpeedLimit(frameImage, boxes);
     for (int i = 0; i < numOfObjects; i++){
       updatedFrame.objects[i].x = results[0];
