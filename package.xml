@@ -12,18 +12,19 @@
 
   <build_depend>roscpp</build_depend>
   <build_depend>std_msgs</build_depend>
-  <build_depend>bulldog_msgs</build_depend>
+  <build_depend>perception_msgs</build_depend>
   <build_depend>tesseract</build_depend>
   <build_depend>leptonica</build_depend>
   <build_depend>opencv2</build_depend>
   <build_depend>sensor_msgs</build_depend>
+  <build_depend>cv_bridge</build_depend>
 
   <exec_depend>roscpp</exec_depend>
   <exec_depend>std_msgs</exec_depend>
-  <exec_depend>bulldog_msgs</exec_depend>
-  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>perception_msgs</exec_depend>
   <exec_depend>tesseract</exec_depend>
   <exec_depend>leptonica</exec_depend>
   <exec_depend>opencv2</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
 </package>

@@ -7,8 +7,9 @@
 #include <ros/ros.h>
 #include <std_msgs/>
 #include <sensor_msgs/Image.h>
-#include <bulldog_msgs/Frame.h>
-#include <bulldog_msgs/Object.h>
+#include <perception_msgs/Frame.h>
+#include <perception_msgs/ObjectList.h>
+#include <perception_msgs/Object.h>
 #include <opencv2/opencv.hpp>
 
 class Node{
@@ -26,7 +27,7 @@ public:
     int numOfObjects = msg.objects.size();
     int boxes[numOfObjects][4];
     Mat frameImage;
-    bulldog_msgs::Frame updatedFrame = msg;
+    perception_msgs::Frame updatedFrame = msg;
     for (int i = 0; i < numOfObjects; i++){
       boxes[i][0] = msg.objects[i].x; boxes[i][1] = msg.objects[i].y;
       boxes[i][2] = msg.objects[i].h; boxes[i][3] = msg.objects[i].w;

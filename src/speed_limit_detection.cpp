@@ -46,7 +46,7 @@ int * detectSpeedLimit(Mat frameImage, int * boxes){
 Mat ROSToCV(const sensor_msgs::image_encodings& ROSImage){
   cv_bridge::CvImagePtr cv_ptr;
   try{
-    cv_ptr = cv_bridge::toCvCopy(ROSImage, sensor_msgs::image_encodings::BGR8);
+    cv_ptr = cv_bridge::toCvCopy(ROSImage, "rgb8");
   }
   catch (cv_bridge::Exception& e){
     ROS_ERROR("cv_bridge exception: %s", e.what());

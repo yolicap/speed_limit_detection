@@ -25,6 +25,13 @@ Working on it
 # Dependencies:
 TODO
 WAITING ON MESSAGE PACKAGE!
+- [tesseract](https://github.com/tesseract-ocr/tesseract)
+  - sudo apt install tesseract-ocr-eng libtesseract4 libtesseract-dev
+- [opencv2](https://github.com/opencv/opencv)
+- leptonica
+- sensor_msgs
+  - sudo apt install ros-sensor-msgs
+- cv_bridge
 
 # Installations:
 TODO
